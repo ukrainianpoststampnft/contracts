@@ -121,10 +121,10 @@ contract UkrainianPostStamp is ERC721Enumerable, Ownable, RoyaltiesV2Impl {
     }
 
     function toHex(bytes32 data) public pure returns (string memory) {
-		return string(abi.encodePacked("0x", toHex16(bytes16(data)), toHex16(bytes16(data << 128))));
-	}
+        return string(abi.encodePacked("0x", toHex16(bytes16(data)), toHex16(bytes16(data << 128))));
+    }
 
-	function toHex16(bytes16 data) internal pure returns (bytes32 result) {
+    function toHex16(bytes16 data) internal pure returns (bytes32 result) {
 		result =
 			(bytes32(data) & 0xffffffffffffffff000000000000000000000000000000000000000000000000) |
 			((bytes32(data) & 0x0000000000000000ffffffffffffffff00000000000000000000000000000000) >> 64);
@@ -147,5 +147,5 @@ contract UkrainianPostStamp is ERC721Enumerable, Ownable, RoyaltiesV2Impl {
 					0x0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f) *
 				7
 		);
-	}
+    }
 }
