@@ -12,7 +12,6 @@ interface IERC20 {
     function transfer(address _to, uint256 _amount) external returns (bool);
 }
 
-// give your contract a name
 contract UkrainianPostStamp is ERC721Enumerable, Ownable, RoyaltiesV2Impl {
     using Strings for uint256;
 
